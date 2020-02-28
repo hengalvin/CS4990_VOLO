@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'home.dart';
 Color bg = Color(0xFF282a36);
-Color green = Color(0xFF50fa7b);
-void main() => runApp(new LoginScreen());
 
-class LoginScreen extends StatelessWidget {
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -88,7 +88,12 @@ class LoginPageState extends State<LoginPage>
                           color: Colors.teal,
                           textColor: Colors.white,
                           child: new Text("Login"),
-                          onPressed: () => {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeScreen()));
+                          },
                         ),
                         new Row(
                           children: <Widget>[
@@ -97,13 +102,12 @@ class LoginPageState extends State<LoginPage>
                             ),
                             new Text(
                               "Don't have an account?",
-
                               style: TextStyle(color: Colors.grey),
                             ),
                             new FlatButton(
-                                textColor: Colors.deepPurpleAccent,
-                                child: new Text("Sign Up"),
-                                onPressed: () => {},
+                              textColor: Colors.deepPurpleAccent,
+                              child: new Text("Sign Up"),
+                              onPressed: () => {},
                             ),
                           ],
                         )
