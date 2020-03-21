@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501534017083",
+    "firebase_url": "https://volo-fb04a.firebaseio.com",
+    "project_id": "volo-fb04a",
+    "storage_bucket": "volo-fb04a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501534017083:android:175432c6924c464d17be1e",
+        "android_client_info": {
+          "package_name": "com.alvinheng.volo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501534017083-c8c2vomhapp5nvrd5an1tqk0u2nkgmri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-GUIGji_0tZ3DcbGxiuqV2gmJWWR56co"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501534017083-c8c2vomhapp5nvrd5an1tqk0u2nkgmri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
