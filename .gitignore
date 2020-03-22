@@ -1,5 +1,5 @@
 #googleservices
-google-services.json
+public/app/google-services.json
 
 # Miscellaneous
 *.class
