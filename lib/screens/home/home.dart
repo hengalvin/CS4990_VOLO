@@ -3,8 +3,7 @@
 //import 'package:flutter_test/flutter_test.dart';
 //import 'package:http/http.dart' as http;
 //
-//Color bg = Color(0xFF282a36);
-//Color white = Color(0xFFf8f8f2);
+
 //void main() => runApp(new HomeScreen());
 //
 //class HomeScreen extends StatefulWidget {
@@ -104,12 +103,55 @@
 //}
 
 import 'package:flutter/material.dart';
-
+import 'package:volo/services/auth.dart';
+Color bg = Color(0xFF282a36);
+Color white = Color(0xFFf8f8f2);
 class Home extends StatelessWidget {
+
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('home'),
+    int _currentNav = 0;
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: bg,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              MaterialButton(
+                color: Colors.deepPurpleAccent,
+                textColor: Colors.white,
+                child: Text("Log Out"),
+                onPressed: () async {
+                  await _auth.signOut();
+                },
+              ),
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentNav,
+          backgroundColor: Color(0xFF43464B),
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home, color: white),
+              title: Text("Home", style: TextStyle(color: white)),
+              activeIcon: Icon(Icons.home, color: Color(0xFF6272a4)),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search, color: white),
+              title: Text("Search", style: TextStyle(color: white)),
+              activeIcon: Icon(Icons.search, color: Color(0xFF6272a4)),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person, color: white),
+              title: Text("Profile", style: TextStyle(color: white)),
+              activeIcon: Icon(Icons.person, color: Color(0xFF6272a4)),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
