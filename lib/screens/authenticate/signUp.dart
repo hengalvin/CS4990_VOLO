@@ -11,7 +11,6 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
@@ -46,32 +45,46 @@ class _SignUpState extends State<SignUp> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: "First Name",
-                          ),
-                          keyboardType: TextInputType.text,
-                          validator: (val) => val.isEmpty ? 'Enter First Name' : null,
-                          onChanged: (val) {
-                            setState(() => fName = val);
-                          },
-                        ),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            labelText: "Last Name",
-                          ),
-                          keyboardType: TextInputType.text,
-                          validator: (val) => val.isEmpty ? 'Enter Last Name' : null,
-                          onChanged: (val) {
-                            setState(() => lName = val);
-                          },
+                        Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  labelText: "First Name",
+                                ),
+                                keyboardType: TextInputType.text,
+                                validator: (val) =>
+                                    val.isEmpty ? 'Enter First Name' : null,
+                                onChanged: (val) {
+                                  setState(() => fName = val);
+                                },
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20),
+                            ),
+                            Expanded(
+                              child: TextFormField(
+                                decoration: InputDecoration(
+                                  labelText: "Last Name",
+                                ),
+                                keyboardType: TextInputType.text,
+                                validator: (val) =>
+                                val.isEmpty ? 'Enter Last Name' : null,
+                                onChanged: (val) {
+                                  setState(() => fName = val);
+                                },
+                              ),
+                            ),
+                          ],
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                             labelText: "Enter Email",
                           ),
                           keyboardType: TextInputType.emailAddress,
-                          validator: (val) => val.isEmpty ? 'Enter Email' : null,
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter Email' : null,
                           onChanged: (val) {
                             setState(() => email = val);
                           },
@@ -82,7 +95,9 @@ class _SignUpState extends State<SignUp> {
                           ),
                           keyboardType: TextInputType.text,
                           obscureText: true,
-                          validator: (val) => val.length < 8 ? 'Password must containt at least 8 characters' : null,
+                          validator: (val) => val.length < 8
+                              ? 'Password must containt at least 8 characters'
+                              : null,
                           onChanged: (val) {
                             setState(() => password = val);
                           },
@@ -96,9 +111,10 @@ class _SignUpState extends State<SignUp> {
                           textColor: Colors.white,
                           child: Text("Sign Up"),
                           onPressed: () async {
-                            if(_formKey.currentState.validate()){
-                              dynamic result = await _auth.signUpWithEmail(email, password);
-                              if(result == null){
+                            if (_formKey.currentState.validate()) {
+                              dynamic result =
+                                  await _auth.signUpWithEmail(email, password);
+                              if (result == null) {
                                 setState(() => error = 'Enter a valid Email');
                               }
                             }
@@ -126,7 +142,8 @@ class _SignUpState extends State<SignUp> {
                         ),
                         Text(
                           error,
-                          style: TextStyle(color: Color(0xFFFF5555), fontSize: 14),
+                          style:
+                              TextStyle(color: Color(0xFFFF5555), fontSize: 14),
                         ),
                       ],
                     ),

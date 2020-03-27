@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:volo/services/auth.dart';
-
 Color bg = Color(0xFF282a36);
 
 class SignIn extends StatefulWidget {
@@ -11,7 +11,6 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
-
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
@@ -37,20 +36,20 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
       backgroundColor: bg,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Image(
-            image: AssetImage("assets/wave.png"),
-            fit: BoxFit.cover,
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              FlutterLogo(
-                size: _iconAnimation.value * 100,
+              Image(
+                image: AssetImage("assets/wiseowl-transparent.png"),
+                height: _iconAnimation.value * 200,
+                width: _iconAnimation.value * 200,
+                fit: BoxFit.contain,
               ),
               Form(
                 key: _formKey,
