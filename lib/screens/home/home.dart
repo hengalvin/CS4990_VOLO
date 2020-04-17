@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:volo/services/alphaVantage.dart';
 import 'package:volo/services/auth.dart';
 import 'package:flutter_sparkline/flutter_sparkline.dart';
+import 'botNavBar.dart';
 import 'package:volo/services/timeSeries.dart';
 
 Color bg = Color(0xFF282a36);
-Color white = Color(0xFFf8f8f2);
 
+// ignore: must_be_immutable
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
   final AlphaVantage _vantage = AlphaVantage();
@@ -115,31 +116,32 @@ class Home extends StatelessWidget {
     255.97,
     255.9
   ];
+  Color white = Color(0xFFf8f8f2);
 
-  Material botNavBar() {
-    return Material(
-      child: BottomNavigationBar(
-        backgroundColor: Color(0xFF43464B),
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: white),
-            title: Text("Home", style: TextStyle(color: white)),
-            activeIcon: Icon(Icons.home, color: Color(0xFF6272a4)),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search, color: white),
-            title: Text("Search", style: TextStyle(color: white)),
-            activeIcon: Icon(Icons.search, color: Color(0xFF6272a4)),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: white),
-            title: Text("Profile", style: TextStyle(color: white)),
-            activeIcon: Icon(Icons.person, color: Color(0xFF6272a4)),
-          ),
-        ],
-      ),
-    );
-  }
+//  Material botNavBar() {
+//  return Material(
+//    child: BottomNavigationBar(
+//      backgroundColor: Color(0xFF43464B),
+//      items: [
+//        BottomNavigationBarItem(
+//          icon: Icon(Icons.home, color: white),
+//          title: Text("Home", style: TextStyle(color: white)),
+//          activeIcon: Icon(Icons.home, color: Color(0xFF6272a4)),
+//        ),
+//        BottomNavigationBarItem(
+//          icon: Icon(Icons.search, color: white),
+//          title: Text("Search", style: TextStyle(color: white)),
+//          activeIcon: Icon(Icons.search, color: Color(0xFF6272a4)),
+//        ),
+//        BottomNavigationBarItem(
+//          icon: Icon(Icons.person, color: white),
+//          title: Text("Profile", style: TextStyle(color: white)),
+//          activeIcon: Icon(Icons.person, color: Color(0xFF6272a4)),
+//        ),
+//      ],
+//    ),
+//  );
+//}
 
   Material myChart(String title, String name, List<double> lst, Color xx, String priceVal) {
     return Material(
@@ -265,7 +267,7 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: botNavBar(),
+//        bottomNavigationBar: botNavBar(),
       ),
     );
   }
