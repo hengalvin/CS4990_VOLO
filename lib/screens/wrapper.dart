@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:volo/models/user.dart';
 import 'package:volo/screens/authenticate/authenticate.dart';
 import 'package:volo/screens/authenticate/signUp.dart';
-import 'package:volo/screens/home/home.dart';
+import 'package:volo/screens/UI/home.dart';
+import 'package:volo/screens/UI/botNavBar.dart';
 
 class Wrapper extends StatelessWidget {
   @override
@@ -14,7 +15,8 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return Authenticate();
     } else {
-      return Home();
+//      return Home();
+      return botNavBar();
     }
   }
 }
