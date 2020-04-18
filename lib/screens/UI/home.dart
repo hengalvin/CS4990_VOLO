@@ -118,30 +118,6 @@ class Home extends StatelessWidget {
   ];
   Color white = Color(0xFFf8f8f2);
 
-//  Material botNavBar() {
-//  return Material(
-//    child: BottomNavigationBar(
-//      backgroundColor: Color(0xFF43464B),
-//      items: [
-//        BottomNavigationBarItem(
-//          icon: Icon(Icons.home, color: white),
-//          title: Text("Home", style: TextStyle(color: white)),
-//          activeIcon: Icon(Icons.home, color: Color(0xFF6272a4)),
-//        ),
-//        BottomNavigationBarItem(
-//          icon: Icon(Icons.search, color: white),
-//          title: Text("Search", style: TextStyle(color: white)),
-//          activeIcon: Icon(Icons.search, color: Color(0xFF6272a4)),
-//        ),
-//        BottomNavigationBarItem(
-//          icon: Icon(Icons.person, color: white),
-//          title: Text("Profile", style: TextStyle(color: white)),
-//          activeIcon: Icon(Icons.person, color: Color(0xFF6272a4)),
-//        ),
-//      ],
-//    ),
-//  );
-//}
 
   Material myChart(String title, String name, List<double> lst, Color xx, String priceVal) {
     return Material(
@@ -214,19 +190,14 @@ class Home extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                 ),
-//                Padding(
-//                  padding: const EdgeInsets.only(top: 10.0),
-//                  child: Text(
-//                    "HELO",
-//                    style: TextStyle(
-//                      fontSize: 40.0,
-//                      color: Colors.blueAccent,
-//                    ),
-//                  ),
-//                ),
-                Padding(
+                Container(
                   padding: const EdgeInsets.all(8.0),
-                  child: myChart("AAPL", "Apple", _aapl,  Color(0xff50fa7b), "\$247.52"),
+                  child: GestureDetector(
+                    onTap: () {
+                      print("GESTURE PRESSED");
+                    },
+                    child: myChart("AAPL", "Apple", _aapl,  Color(0xff50fa7b), "\$247.52"),
+                ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -247,27 +218,17 @@ class Home extends StatelessWidget {
                   ),
                   color: Colors.teal,
                   textColor: Colors.white,
-                  child: Text("AAPL"),
+                  child: Text("DOW"),
                   onPressed: () async {
-                    await _vantage.getTimeSeries("NFLX");
+//                    await _vantage.getTimeSeries("NFLX");
+                    await _vantage.getDow();
                   },
-                ),
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                  color: Colors.deepPurpleAccent,
-                  textColor: Colors.white,
-                  child: Text("Log out"),
-                  onPressed: () async {
-                    await _auth.signOut();
-                  },
+
                 ),
               ],
             ),
           ),
         ),
-//        bottomNavigationBar: botNavBar(),
       ),
     );
   }

@@ -47,8 +47,8 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
             children: <Widget>[
               Image(
                 image: AssetImage("assets/wiseowl-transparent.png"),
-                height: _iconAnimation.value * 200,
-                width: _iconAnimation.value * 200,
+                height: _iconAnimation.value * 150,
+                width: _iconAnimation.value * 150,
                 fit: BoxFit.contain,
               ),
               Form(

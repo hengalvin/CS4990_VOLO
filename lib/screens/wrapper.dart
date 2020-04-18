@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:volo/models/user.dart';
 import 'package:volo/screens/authenticate/authenticate.dart';
 import 'package:volo/screens/authenticate/signUp.dart';
-import 'package:volo/screens/home/home.dart';
-import 'package:volo/screens/home/botNavBar.dart';
+import 'package:volo/screens/UI/home.dart';
+import 'package:volo/screens/UI/botNavBar.dart';
 
 class Wrapper extends StatelessWidget {
   @override

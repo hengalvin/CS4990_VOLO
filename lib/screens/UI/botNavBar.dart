@@ -14,11 +14,10 @@ class _botNavBarState extends State<botNavBar> {
   int _currentIndex = 0;
   final _pages = [
     Home(),
-    Search(),
-//    Profile(),
+    Profile(),
 //    Text('Item 1', style: TextStyle(fontSize: 36),),
 //    Text('Item 2', style: TextStyle(fontSize: 36),),
-    Text('Item 3', style: TextStyle(fontSize: 36),),
+//    Text('Item 3', style: TextStyle(fontSize: 36),),
   ];
 
   @override
@@ -39,11 +38,6 @@ class _botNavBarState extends State<botNavBar> {
               icon: Icon(Icons.home, color: white),
               title: Text("Home", style: TextStyle(color: white)),
               activeIcon: Icon(Icons.home, color: Color(0xFF6272a4)),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search, color: white),
-              title: Text("Search", style: TextStyle(color: white)),
-              activeIcon: Icon(Icons.search, color: Color(0xFF6272a4)),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person, color: white),
