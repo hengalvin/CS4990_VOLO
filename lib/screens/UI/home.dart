@@ -95,75 +95,73 @@ class Home extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: bg,
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("MMM", "3M Company", _mmm,  Color(0xff50fa7b), "\$146.46"),
-                  ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("MMM", "3M Company", _mmm,  Color(0xff50fa7b), "\$146.46"),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("CSCO", "Cisco", _csco,  Color(0xff50fa7b), "\$42.48"),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("CSCO", "Cisco", _csco,  Color(0xff50fa7b), "\$42.48"),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("AAPL", "Apple Inc.", _aapl,  Color(0xffff5555), "\$282.80"),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("AAPL", "Apple Inc.", _aapl,  Color(0xffff5555), "\$282.80"),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("BA", "Boeing", _ba,  Color(0xff50fa7b), "\$154.00"),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("BA", "Boeing", _ba,  Color(0xff50fa7b), "\$154.00"),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("CAT", "Caterpillar", _cat,  Color(0xff50fa7b), "\$116.30"),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("CAT", "Caterpillar", _cat,  Color(0xff50fa7b), "\$116.30"),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("IBM", "IBM", _ibm,  Color(0xff50fa7b), "\$120.12"),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("IBM", "IBM", _ibm,  Color(0xff50fa7b), "\$120.12"),
                 ),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      print("GESTURE PRESSED");
-                    },
-                    child: myChart("MCD", "Mcdonald's", _mcd,  Color(0xff50fa7b), "\$186.10"),
-                  ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    print("GESTURE PRESSED");
+                  },
+                  child: myChart("MCD", "Mcdonald's", _mcd,  Color(0xff50fa7b), "\$186.10"),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

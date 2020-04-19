@@ -40,12 +40,15 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
       backgroundColor: bg,
-      body: Stack(
-        fit: StackFit.expand,
+      body: ListView(
+//        fit: StackFit.expand,
         children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 65),
+              ),
               Image(
                 image: AssetImage("assets/wiseowl-transparent.png"),
                 height: _iconAnimation.value * 150,
