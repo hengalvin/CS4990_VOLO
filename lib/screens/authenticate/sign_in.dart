@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:volo/services/auth.dart';
+
 Color bg = Color(0xFF282a36);
 
 class SignIn extends StatefulWidget {
@@ -71,7 +72,8 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                             labelText: "Enter Email",
                           ),
                           keyboardType: TextInputType.emailAddress,
-                          validator: (val) => val.isEmpty ? 'Enter Email' : null,
+                          validator: (val) =>
+                              val.isEmpty ? 'Enter Email' : null,
                           onChanged: (val) {
                             setState(() => email = val);
                           },
@@ -82,7 +84,9 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                           ),
                           keyboardType: TextInputType.text,
                           obscureText: true,
-                          validator: (val) => val.length < 8 ? 'Password must containt at least 8 characters' : null,
+                          validator: (val) => val.length < 8
+                              ? 'Password must containt at least 8 characters'
+                              : null,
                           onChanged: (val) {
                             setState(() => password = val);
                           },
@@ -99,10 +103,12 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                               textColor: Colors.white,
                               child: Text("Login"),
                               onPressed: () async {
-                                if(_formKey.currentState.validate()){
-                                  dynamic result = await _auth.signInWithEmail(email, password);
-                                  if(result == null){
-                                    setState(() => error = 'Email and Password does not match');
+                                if (_formKey.currentState.validate()) {
+                                  dynamic result = await _auth.signInWithEmail(
+                                      email, password);
+                                  if (result == null) {
+                                    setState(() => error =
+                                        'Email and Password does not match');
                                   }
                                 }
                               },
@@ -129,28 +135,28 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
                             Padding(
                               padding: const EdgeInsets.only(left: 30.0),
                             ),
-                              Text(
-                                "Don't have an account?",
-                                style: TextStyle(color: Colors.grey),
+                            Text(
+                              "Don't have an account?",
+                              style: TextStyle(color: Colors.grey),
                             ),
                             FlatButton(
-                              textColor: Colors.yellow,
-                              child: Text("Sign in as guest"),
+                                textColor: Colors.yellow,
+                                child: Text("Sign in as guest"),
                                 onPressed: () async {
                                   dynamic result = await _auth.signInAnon();
-                                  if(result == null){
+                                  if (result == null) {
                                     print('error signing in');
                                   } else {
                                     print('signed in');
                                     print(result.uid);
                                   }
-                                }
-                            ),
+                                }),
                           ],
                         ),
                         Text(
                           error,
-                          style: TextStyle(color: Color(0xFFFF5555), fontSize: 14),
+                          style:
+                              TextStyle(color: Color(0xFFFF5555), fontSize: 14),
                         ),
                       ],
                     ),
