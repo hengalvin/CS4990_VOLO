@@ -70,7 +70,7 @@ class _SignUpState extends State<SignUp> {
                                 ),
                                 keyboardType: TextInputType.text,
                                 validator: (val) =>
-                                val.isEmpty ? 'Enter Last Name' : null,
+                                    val.isEmpty ? 'Enter Last Name' : null,
                                 onChanged: (val) {
                                   setState(() => fName = val);
                                 },
@@ -123,9 +123,6 @@ class _SignUpState extends State<SignUp> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-//                            Padding(
-//                              padding: const EdgeInsets.only(left: 30.0),
-//                            ),
                             Text(
                               "Already have an account?",
                               style: TextStyle(color: Colors.grey),
